@@ -1,0 +1,9 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: demo_test  #（可选）
+      database: demo_test
+#      username:           #（可选）
+#      password:         #（可选）
