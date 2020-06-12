@@ -4,3 +4,5 @@ demo-springboot
 - demo-filter
 - demo-jsp
 - demo-nacos
+- demo-mongodb
+- demo-xxljob
