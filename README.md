@@ -6,3 +6,5 @@ demo-springboot
 - demo-nacos
 - demo-mongodb
 - demo-xxljob
+
+- demo-kafka
