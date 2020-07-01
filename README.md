@@ -8,3 +8,4 @@ demo-springboot
 - demo-xxljob
 - demo-kafka
 - demo-elasticsearch
+- demo-dubbo
