@@ -1,0 +1,15 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo-elasticsearch
+
+spring:
+  data:
+    elasticsearch:
+      cluster-nodes: localhost:9300
+      repositories:
+        enabled: true
+
+
+
+
