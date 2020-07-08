@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    #########oracle数据库
+    url: jdbc:oracle:thin:@ip:port:SID
+    username: xxx
+    password: xxx
+    driver-class-name: oracle.jdbc.driver.OracleDriver

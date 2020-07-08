@@ -9,3 +9,4 @@ demo-springboot
 - demo-kafka
 - demo-elasticsearch
 - demo-dubbo
+- demo-oracle
