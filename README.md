@@ -10,3 +10,5 @@ demo-springboot
 - demo-elasticsearch
 - demo-dubbo
 - demo-oracle
+- demo-swagger
+
