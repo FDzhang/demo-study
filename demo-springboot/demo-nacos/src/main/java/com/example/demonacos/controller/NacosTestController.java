@@ -24,13 +24,13 @@ public class NacosTestController {
     @GetMapping("nacos")
     public Object getValues(String cityCode){
         // 从nacos中获取数据
-        JSONObject jsonObject = JSON.parseObject(city);
+//        JSONObject jsonObject = JSON.parseObject(city);
         System.out.println("nacos-config:"+city);
 
         // 根据key获取对象
-        CityInfo info = jsonObject.getObject(cityCode, CityInfo.class);
-        System.out.println(cityCode+"的info:"+info);
+//        CityInfo info = jsonObject.getObject(cityCode, CityInfo.class);
+//        System.out.println(cityCode+"的info:"+info);
 
-        return info;
+        return city;
     }
 }
