@@ -36,31 +36,31 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-dependencies-zookeeper</artifactId>
-            <version>${dubbo.version}</version>
-            <type>pom</type>
-            <exclusions>
-                <exclusion>
-                    <artifactId>slf4j-log4j12</artifactId>
-                    <groupId>org.slf4j</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <!--&lt;!&ndash; Dubbo Registry Nacos &ndash;&gt;-->
-        <!--&lt;!&ndash;ʹ�� nacos ��Ϊ dubbo ��ע������&ndash;&gt;-->
         <!--<dependency>-->
             <!--<groupId>org.apache.dubbo</groupId>-->
-            <!--<artifactId>dubbo-registry-nacos</artifactId>-->
+            <!--<artifactId>dubbo-dependencies-zookeeper</artifactId>-->
             <!--<version>${dubbo.version}</version>-->
+            <!--<type>pom</type>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<artifactId>slf4j-log4j12</artifactId>-->
+                    <!--<groupId>org.slf4j</groupId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
         <!--</dependency>-->
+        <!-- Dubbo Registry Nacos -->
+        <!--ʹ�� nacos ��Ϊ dubbo ��ע������-->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>com.alibaba.nacos</groupId>-->
-            <!--<artifactId>nacos-client</artifactId>-->
-            <!--<version>1.2.1</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+            <version>1.2.1</version>
+        </dependency>
 
     </dependencies>
 

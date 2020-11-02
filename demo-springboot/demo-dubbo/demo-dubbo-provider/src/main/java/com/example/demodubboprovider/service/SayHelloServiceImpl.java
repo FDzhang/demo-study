@@ -2,13 +2,13 @@ package com.example.demodubboprovider.service;
 
 import com.example.demodubboapi.model.User;
 import com.example.demodubboapi.service.SayHelloService;
-import org.apache.dubbo.config.annotation.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 
 /**
  * @author ：zxq
  * @date ：Created in 2020/7/1 15:09
  */
-@Service(retries = 0, timeout = 5000, group = "${group.name}")
+@DubboService(retries = 0, timeout = 5000, group = "${group.name}")
 public class SayHelloServiceImpl implements SayHelloService {
     @Override
     public void sayHello(String s) {
