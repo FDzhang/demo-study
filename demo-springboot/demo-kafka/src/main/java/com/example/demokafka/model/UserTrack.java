@@ -7,7 +7,7 @@ import lombok.Data;
  * @date ：Created in 2020/6/28 14:26
  */
 @Data
-public class User {
+public class UserTrack {
     private String name;
     private Integer age;
 }
