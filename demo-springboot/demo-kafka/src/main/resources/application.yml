@@ -1,33 +1,33 @@
-
-spring:
-  kafka:
-    num-of-partitions: 7
-    listener:
-      missing-topics-fatal: false
-    template:
-      default-topic: test12
-    bootstrap-servers: 192.168.0.1:9092,192.168.0.2:9092,192.168.0.3:9092 #指定kafka server的地址，集群配多个，中间，逗号隔开
-    producer:
-      group-id: kafka-producer
-      enable-auto-commit: true
-      auto-commit-interval: 1000
-      auto-offset-reset: latest
-      max-poll-records: 1000
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      properties:
-        sasl.mechanism: PLAIN
-        security.protocol: SASL_PLAINTEXT
-        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="username" password="password";
-    consumer:
-      group-id: kafka-consumer #群组ID
-      enable-auto-commit: true
-      auto-commit-interval: 1000ms
-      max-poll-records: 1000
-      auto-offset-reset: latest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      properties:
-        sasl.mechanism: PLAIN
-        security.protocol: SASL_PLAINTEXT
-        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="username" password="password";
+#
+#spring:
+#  kafka:
+#    num-of-partitions: 7
+#    listener:
+#      missing-topics-fatal: false
+#    template:
+#      default-topic: test12
+#    bootstrap-servers: 192.168.0.1:9092,192.168.0.2:9092,192.168.0.3:9092 #指定kafka server的地址，集群配多个，中间，逗号隔开
+#    producer:
+#      group-id: kafka-producer
+#      enable-auto-commit: true
+#      auto-commit-interval: 1000
+#      auto-offset-reset: latest
+#      max-poll-records: 1000
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      properties:
+#        sasl.mechanism: PLAIN
+#        security.protocol: SASL_PLAINTEXT
+#        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="username" password="password";
+#    consumer:
+#      group-id: kafka-consumer #群组ID
+#      enable-auto-commit: true
+#      auto-commit-interval: 1000ms
+#      max-poll-records: 1000
+#      auto-offset-reset: latest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      properties:
+#        sasl.mechanism: PLAIN
+#        security.protocol: SASL_PLAINTEXT
+#        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="username" password="password";

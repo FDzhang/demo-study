@@ -1,11 +1,14 @@
 package com.example.demokafka.config;
 
+import org.apache.kafka.clients.admin.AdminClient;
+import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
+import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
 
 import java.util.HashMap;
@@ -20,6 +23,9 @@ public class KafkaConfig {
 
     @Value("${spring.kafka.bootstrap-servers}")
     private String bootstrapServer;
+
+    @Value("${spring.kafka.num-of-partitions}")
+    private Integer partitions;
 
     @Value("${spring.kafka.consumer.group-id}")
     private String consumerGroupId;
@@ -63,11 +69,13 @@ public class KafkaConfig {
     }
 
     @Bean
-    ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, String> factory =
-                new ConcurrentKafkaListenerContainerFactory<>();
+    KafkaListenerContainerFactory<?> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
-        factory.setConcurrency(3);
+        //开启多线程
+        //factory.setConcurrency(3);
+        // 开启批量监听
+        factory.setBatchListener(true);
         return factory;
     }
 
@@ -91,4 +99,29 @@ public class KafkaConfig {
         return props;
     }
 
+    /**
+     * 创建一个kafka管理类，相当于rabbitMQ的管理类rabbitAdmin,没有此bean无法自定义的使用adminClient创建topic
+     */
+    @Bean
+    public KafkaAdmin kafkaAdmin() {
+        Map<String, Object> props = new HashMap<>(16);
+        props.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServer);
+        props.put("num.partitions", partitions);
+
+        props.put("sasl.mechanism", saslMechanism);
+        props.put(AdminClientConfig.SECURITY_PROTOCOL_CONFIG, securityProtocol);
+        props.put("sasl.jaas.config", saslJaasConfig);
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+        return new KafkaAdmin(props);
+    }
+
+    /**
+     * kafka客户端，在spring中创建这个bean之后可以注入并且创建topic
+     */
+    @Bean
+    public AdminClient adminClient() {
+        return AdminClient.create(kafkaAdmin().getConfigurationProperties());
+    }
 }
