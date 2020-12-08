@@ -69,7 +69,8 @@ public class TestController {
         Cat cat = new Cat();
         cat.setName("2号");
         cat.setAge(3);
-        cat.setBirthDay(new Date(1604160000000L));
+//        cat.setBirthDay(new Date(1604160000000L));
+        cat.setBirthDay(new Date());
         mongoTemplate.insert(cat, "cat");
         return "success";
     }
