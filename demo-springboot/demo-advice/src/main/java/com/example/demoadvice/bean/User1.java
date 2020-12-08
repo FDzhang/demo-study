@@ -1,5 +1,10 @@
 package com.example.demoadvice.bean;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,10 +12,12 @@ import java.util.Date;
  * @author ：zxq
  * @date ：Created in 2020/12/3 16:46
  */
-
+//@ToString
 public class User1 implements Serializable {
     private Integer id;
     private String firstName;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date birth;
 
     public User1() {
