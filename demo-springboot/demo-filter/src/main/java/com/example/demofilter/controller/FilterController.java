@@ -15,7 +15,7 @@ public class FilterController {
 
     @GetMapping("/test")
     public String test(String cityCode){
-        System.out.println("test-"+cityCode);
+        System.out.println("controller-test-"+cityCode);
         return cityCode;
     }
 }
