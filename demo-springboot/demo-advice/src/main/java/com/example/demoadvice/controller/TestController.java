@@ -2,10 +2,7 @@ package com.example.demoadvice.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.example.demoadvice.annotion.CustomResponse;
-import com.example.demoadvice.bean.Result;
-import com.example.demoadvice.bean.User;
-import com.example.demoadvice.bean.User1;
-import com.example.demoadvice.bean.User2;
+import com.example.demoadvice.bean.*;
 import com.example.demoadvice.exception.MyException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 
 /**
@@ -30,6 +29,12 @@ public class TestController {
         User user = new User(1, "悟空", new Date());
         return new Result("200", "成功", user);
     }
+
+    @GetMapping("/all")
+    public ResultBean<String> getAll() {
+        return new ResultBean<>("success");
+    }
+
 
     @GetMapping("test1")
     public User test1() {

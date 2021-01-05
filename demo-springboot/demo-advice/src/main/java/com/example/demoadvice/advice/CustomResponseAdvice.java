@@ -16,9 +16,12 @@ import java.lang.reflect.Method;
  * @author ：zxq
  * @date ：Created in 2020/12/3 17:20
  */
-@ControllerAdvice
+//@ControllerAdvice
 @Slf4j
 public class CustomResponseAdvice implements ResponseBodyAdvice {
+
+
+
     /**
      * 是否需要处理返回结果
      *
