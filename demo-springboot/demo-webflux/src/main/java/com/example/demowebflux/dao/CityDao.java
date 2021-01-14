@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -21,7 +22,15 @@ public class CityDao {
     public Long save(City city) {
         Long id = idGenerator.incrementAndGet();
         city.setId(id);
-        repository.putIfAbsent(id, city);
+        repository.put(id, city);
+
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println("some string");
+
         return id;
     }
 

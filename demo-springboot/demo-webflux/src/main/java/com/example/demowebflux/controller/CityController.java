@@ -2,8 +2,8 @@ package com.example.demowebflux.controller;
 
 import com.example.demowebflux.bean.City;
 import com.example.demowebflux.handler.CityHandler;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -16,6 +16,7 @@ import reactor.core.publisher.Mono;
  */
 @RestController
 @RequestMapping("/city")
+@Slf4j
 public class CityController {
 
     @Autowired
@@ -33,7 +34,10 @@ public class CityController {
 
     @PostMapping()
     public Mono<Long> saveCity(@RequestBody City city) {
-        return cityHandler.save(city);
+        log.info("start");
+        Mono<Long> id = cityHandler.save(city);
+        log.info("end");
+        return id;
     }
 
     @PutMapping()
