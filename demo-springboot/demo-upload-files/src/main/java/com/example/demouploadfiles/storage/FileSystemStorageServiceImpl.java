@@ -16,6 +16,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
@@ -82,6 +84,15 @@ public class FileSystemStorageServiceImpl implements StorageService {
             throw new StorageException("Failed to read stored files", e);
         }
 
+    }
+
+    public static void main(String[] args) throws IOException {
+        Path location = Paths.get("./demo-springboot");
+        List<String> collect = Files.walk(location, 1)
+                .filter(path -> !path.equals(location))
+                .map(location::relativize).map(p -> p.getFileName().toString()).collect(Collectors.toList());
+
+        collect.forEach(System.out::println);
     }
 
     @Override
