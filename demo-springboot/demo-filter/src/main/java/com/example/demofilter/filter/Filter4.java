@@ -1,18 +1,12 @@
 package com.example.demofilter.filter;
 
-import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.annotation.Order;
 
 import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.annotation.WebInitParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * order 越小 越先被经过
@@ -24,8 +18,8 @@ import java.util.Map;
  * @date ：Created in 2020/4/27 17:54
  */
 
-@Order(1)
-@WebFilter(filterName = "Filter4", urlPatterns = "/*")
+//@Order(1)
+//@WebFilter(filterName = "Filter4", urlPatterns = "/*")
 @Slf4j
 public class Filter4 implements Filter {
 
