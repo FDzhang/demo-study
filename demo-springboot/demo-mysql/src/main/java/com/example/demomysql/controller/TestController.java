@@ -16,6 +16,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
+ * 1. 生成thingCode
+ *
  * @author ：zxq
  * @date ：Created in 2020/10/20 11:01
  */

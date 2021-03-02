@@ -9,3 +9,7 @@ server:
     buffer-size: 1024
     # 是否分配的直接内存(NIO直接分配的堆外内存)
     direct-buffers: true
+
+logging:
+  level:
+    com.example.demomysql.mapper: info
