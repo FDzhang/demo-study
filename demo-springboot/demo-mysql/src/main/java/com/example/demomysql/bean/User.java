@@ -1,14 +1,16 @@
 package com.example.demomysql.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
+ *
+ * @Data 注解重写了 实体类的 equals 方法
+ *
  * @author ：zxq
  * @date ：Created in 2020/12/18 14:34
  */
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
