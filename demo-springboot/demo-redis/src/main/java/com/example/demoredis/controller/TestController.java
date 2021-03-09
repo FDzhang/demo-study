@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @Autowired
-    private RedisTemplate template;
+    private RedisTemplate<String, String> template;
 
 
 
