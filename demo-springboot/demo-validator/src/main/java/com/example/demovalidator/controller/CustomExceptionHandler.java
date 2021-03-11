@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,16 +26,16 @@ public class CustomExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseBody
     public Result handleException(MethodArgumentNotValidException e) {
-        log.error("系统异常 {}", e);
         List<String> errMsg = e.getBindingResult().getFieldErrors().stream()
                 .map(FieldError::getDefaultMessage).collect(Collectors.toList());
+        log.error("异常 {}", errMsg);
         return new Result("2", "参数校验未通过", errMsg);
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseBody
     public Result handleException(HttpMessageNotReadableException e) {
-        log.error("系统异常 {}", e);
+        log.error("异常 {}", e);
         return new Result("3", "参数无法读取", e.getMessage());
     }
 
