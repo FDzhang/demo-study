@@ -35,3 +35,4 @@ build/
 mvnw.cmd
 mvnw
 .mvn
+!/src/test/java/com/example/demoredis/*
