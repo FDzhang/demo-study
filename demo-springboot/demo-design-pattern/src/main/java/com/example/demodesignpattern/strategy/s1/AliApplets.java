@@ -1,12 +1,14 @@
 package com.example.demodesignpattern.strategy.s1;
 
+import org.springframework.stereotype.Component;
+
 import java.util.Map;
 
 /**
  * @author ：zxq
  * @date ：Created in 2021/3/19 9:57
  */
-
+@Component("ali")
 public class AliApplets implements Applets {
     @Override
     public Map<String, String> sign(String url) {
