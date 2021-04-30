@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url:
+    username:
+    password:
