@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserMapper extends BaseMapper<Vo> {
 
-    @Select("select * from user where name=#{name}")
+    @Select("select * from hero where name=#{name}")
     User getUser(String name);
 }
