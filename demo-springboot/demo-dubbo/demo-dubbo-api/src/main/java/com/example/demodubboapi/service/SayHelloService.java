@@ -11,4 +11,8 @@ public interface SayHelloService {
     void sayHello(String s);
 
     User getUser();
+
+    void build(User user);
+
+    User reBuild(User user);
 }

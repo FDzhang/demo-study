@@ -22,4 +22,15 @@ public class SayHelloServiceImpl implements SayHelloService {
         user.setAge(500);
         return user;
     }
+
+    @Override
+    public void build(User user) {
+        user.setAge(500);
+    }
+
+    @Override
+    public User reBuild(User user) {
+        user.setAge(500);
+        return user;
+    }
 }

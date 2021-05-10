@@ -30,4 +30,20 @@ public class HelloController {
     public User getUser(){
         return sayHelloService.getUser();
     }
+
+    @GetMapping("build")
+    public User build(){
+        User user = new User();
+        user.setName("悟空");
+        sayHelloService.build(user);
+        return user;
+    }
+
+    @GetMapping("build2")
+    public User build2(){
+        User user = new User();
+        user.setName("悟空");
+        user = sayHelloService.reBuild(user);
+        return user;
+    }
 }
