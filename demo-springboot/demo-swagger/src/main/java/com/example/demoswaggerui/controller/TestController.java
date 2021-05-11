@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping
 //Api注解，描述信息 可通过tag进行分类
-@Api(value = "TestController", description = "测试controller")
+@Api(value = "TestController")
 public class TestController {
 
 //    //方法描述
