@@ -22,6 +22,7 @@ public class CodeGenerator {
 
     private static final String projectPath = System.getProperty("user.dir") + "/demo-springboot/demo-mybatisplus";
 
+    private final static String packageParent = "com.example.demomybatisplus.gen";
     private final static String moduleName = "hzw";
 
     private final static String[] tableNames = {"hzw_role"};
@@ -75,7 +76,7 @@ public class CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名，如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper" + pc.getModuleName()
+                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
                         + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
@@ -130,7 +131,7 @@ public class CodeGenerator {
     private static PackageConfig getPackageConfig() {
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(moduleName);
-        pc.setParent("com.example.demomybatisplus.gen");
+        pc.setParent(packageParent);
         return pc;
     }
 
@@ -152,7 +153,6 @@ public class CodeGenerator {
      */
     private static GlobalConfig getGlobalConfig() {
         GlobalConfig gc = new GlobalConfig();
-        // TODO
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("zxq");
         // 是否打开输出目录
