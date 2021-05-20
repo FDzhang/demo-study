@@ -1,18 +1,16 @@
 package com.example.demomybatisplus.generator;
 
-import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
-import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * @author zhangxinqiang
@@ -159,6 +157,13 @@ public class CodeGenerator {
         gc.setOpen(false);
         // 实体属性 Swagger2 注解
         gc.setSwagger2(true);
+        gc.setDateType(DateType.ONLY_DATE);
+
+        gc.setActiveRecord(true);
+        // xml相关
+        gc.setBaseResultMap(true);
+        gc.setBaseColumnList(true);
+
         return gc;
     }
 
