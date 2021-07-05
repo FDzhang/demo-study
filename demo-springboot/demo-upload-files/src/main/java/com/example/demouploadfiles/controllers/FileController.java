@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -37,6 +39,11 @@ public class FileController {
         return "listFiles";
     }
 
+    /**
+     * 文件下载
+     *
+     * 文件下载名称可能需要 url encode 编码
+     */
     @GetMapping("/download/{filename:.+}")
     @ResponseBody
     public ResponseEntity<Resource> downloadFile(@PathVariable String filename) {
@@ -45,7 +52,7 @@ public class FileController {
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION,
-                        "attachment; filename=\"" + resource.getFilename() + "\"")
+                        "attachment; filename=\"" + URLEncoder.encode(resource.getFilename(), Charset.defaultCharset()) + "\"")
                 .body(resource);
     }
 
