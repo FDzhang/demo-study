@@ -20,6 +20,8 @@ public class IDoubleSerialize extends JsonSerializer<Double> {
     public void serialize(Double aDouble, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
         if (aDouble != null) {
             jsonGenerator.writeString(df.format(aDouble));
+        } else {
+            jsonGenerator.writeString(df.format(0.00));
         }
     }
 }

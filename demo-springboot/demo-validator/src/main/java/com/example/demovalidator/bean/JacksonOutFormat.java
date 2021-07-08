@@ -18,7 +18,7 @@ public class JacksonOutFormat {
     private Integer number;
     private Long id;
 
-    @JsonSerialize(using = IDoubleSerialize.class)
+    @JsonSerialize(using = IDoubleSerialize.class, nullsUsing = IDoubleSerialize.class)
     private Double d1;
     @JsonSerialize(using = IWanSerialize.class)
     private Double d2;
