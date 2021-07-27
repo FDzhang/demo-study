@@ -64,4 +64,11 @@ public class AsyncService {
         }
         logger.info(results.toString());
     }
+
+    @Async
+    public void print(int len) {
+        for (int i = 0; i < len; i++) {
+            System.out.println(Thread.currentThread() + " --- " + i);
+        }
+    }
 }

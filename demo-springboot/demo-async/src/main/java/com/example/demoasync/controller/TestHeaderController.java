@@ -1,7 +1,10 @@
 package com.example.demoasync.controller;
 
+import cn.hutool.core.thread.ThreadUtil;
 import com.example.demoasync.async.AsyncService;
+import com.example.demoasync.async.Task1;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,5 +28,13 @@ public class TestHeaderController {
         System.out.println(request.getHeader("user-agent"));
         return "success";
     }
+
+    @GetMapping("test1")
+    public String test(){
+        asyncService.print(100);
+        asyncService.print(100);
+        return "success";
+    }
+
 }
 
