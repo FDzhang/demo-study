@@ -57,6 +57,12 @@
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>1.3.0</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.baomidou/dynamic-datasource-spring-boot-starter -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>3.3.2</version>
+        </dependency>
         <!-- mybatis plus -->
 
         <!--swagger文档-->
@@ -72,6 +78,13 @@
             <version>1.9.6</version>
         </dependency>
         <!--swagger文档-->
+
+        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.5</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
         <dependency>
