@@ -1,10 +1,17 @@
 package com.example.demouploadfiles.controllers;
 
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.http.HttpUtil;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
+import cn.hutool.poi.excel.ExcelWriter;
 import cn.hutool.poi.excel.cell.CellEditor;
 import com.example.demouploadfiles.vo.MdKeywordList;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.ClientAnchor;
+import org.apache.poi.ss.usermodel.Drawing;
+import org.apache.poi.ss.usermodel.Sheet;
 
 import java.util.HashMap;
 import java.util.List;
@@ -44,14 +51,45 @@ public class FileEg2Controller {
     }
 
     public static void main(String[] args) {
-        String fileName = "d:/PM-102-【任务2】关键词清单导入模板.xlsx";
+//        String fileName = "d:/PM-102-【任务2】关键词清单导入模板.xlsx";
+//
+//        List<MdKeywordList> read = getMdKeywordListsFromExcel(fileName);
+//
+//        System.out.println(" rows size " + read.size());
+//        for (MdKeywordList mdKeywordList : read) {
+//            System.out.println(mdKeywordList);
+//        }
 
-        List<MdKeywordList> read = getMdKeywordListsFromExcel(fileName);
+        ExcelWriter writer = ExcelUtil.getWriter("d:/test.xlsx");
+        writer.setDefaultRowHeight(105);
+        writer.setColumnWidth(-1, 30);
 
-        System.out.println(" rows size " + read.size());
-        for (MdKeywordList mdKeywordList : read) {
-            System.out.println(mdKeywordList);
+        //测试写入10个图片
+        for (int i = 0; i < 10; i++) {
+            //读取图片
+            byte[] pictureData = FileUtil.readBytes("d:/1.jpg");
+            HttpUtil.downloadBytes("");
+
+            //写入图片
+            writePic(writer, 0, i, pictureData, HSSFWorkbook.PICTURE_TYPE_JPEG);
         }
+        writer.close();
+
+        System.out.println("success");
+    }
+
+    private static void writePic(ExcelWriter writer, int x, int y, byte[] pictureData, int picType) {
+        Sheet sheet = writer.getSheet();
+        Drawing drawingPatriarch = sheet.createDrawingPatriarch();
+
+        //设置图片单元格位置
+        ClientAnchor anchor = drawingPatriarch.createAnchor(0, 0, 0, 0, x, y, x + 1, y + 1);
+        //随单元格改变位置和大小
+        anchor.setAnchorType(ClientAnchor.AnchorType.MOVE_AND_RESIZE);
+
+        //添加图片
+        int pictureIndex = sheet.getWorkbook().addPicture(pictureData, picType);
+        drawingPatriarch.createPicture(anchor, pictureIndex);
     }
 
     private static Map<String, String> getHeaderAlias() {
