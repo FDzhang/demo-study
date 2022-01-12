@@ -1,6 +1,7 @@
 package com.example.demojaeger.controller;
 
 import cn.hutool.http.HttpUtil;
+import com.example.demojaeger.service.TracingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.Resource;
+
 /**
  * @author zhangxinqiang
  * @create 2022/1/10 13:59
@@ -17,7 +20,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class TracingController {
 
-
+    @Resource
+    private TracingService tracingService;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -43,6 +47,7 @@ public class TracingController {
 
     @GetMapping("/test")
     public String test(String key) {
-        return "test " + key;
+        String res = tracingService.trace(key);
+        return "controller " + res;
     }
 }
