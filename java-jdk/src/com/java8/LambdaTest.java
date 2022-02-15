@@ -71,6 +71,8 @@ public class LambdaTest {
         LambdaTest lambdaTest = new LambdaTest();
         SingleFncInterface sfi2 = lambdaTest::simpleMethod;
 
+        // 构造引用，带参数
+        // SingleFncInterface sfi3 = LambdaTest::new;
 
         //构造引用，不带参数
         Runnable runnable = LambdaTest::new;
