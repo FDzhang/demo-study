@@ -134,6 +134,12 @@ public class LambdaTest {
 interface SingleFncInterface {
     void doSomething(String str);
 
+    /**
+     * 2. 接口默认方法
+     * Java8 允许在接口中添加一个或者多个默认方法，
+     * 在 SingleFncInterface 接口中 print() 就是一个默认方法。
+     * 增加默认方法是为了给接口添加新方法的同时不影响已有的实现，不需要修改全部实现类。
+     */
     default void print() {
         System.out.println("default method.");
     }
