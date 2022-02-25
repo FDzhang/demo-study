@@ -20,6 +20,11 @@
         <module>eureka-demo02-provider</module>
         <module>eureka-demo02-consumer</module>
 
+        <module>eureka-server-security</module>
+        <module>eureka-demo03-provider</module>
+        <module>eureka-demo03-consumer</module>
+
+
     </modules>
     
 </project>
