@@ -1,0 +1,26 @@
+server:
+  port: 18761
+
+spring:
+  application:
+    name: eureka-server
+
+
+#① server.port 配置项目，设置 Eureka-Server 启动的端口。
+#② eureka.instance.hostname 配置，设置注册的主机名为 eureka-node01 和 eureka-node02。
+#同时修改本地 host 文件，设置这两个主机名映射的 IP 地址。因为我们这里在本机搭建 Eureka-Server，所以设置为 127.0.0.1。
+#友情提示：如果胖友部署在正式服务器上，需要设置服务器的内网 IP。
+#127.0.0.1 eureka-node01
+#127.0.0.1 eureka-node02
+#  ③ eureka.client.register-with-eureka 和 eureka.client.fetch-registry 配置项，都设置为 true，因为要进行注册。
+#  同时，将 eureka.client.service-url.defaultZone 配置项，设置为排除自己之外的所有其它 Eureka-Server 节点的地址。
+#  下面，我们来通过 EurekaServerApplication 启动 Eureka-Server 节点，
+#  通过 --spring.profiles.active 设置分别为 node01 和 node02，从而读取不同的配置文件。如下图所示：
+eureka:
+  instance:
+    hostname: eureka-node01
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-node02:28761/eureka/

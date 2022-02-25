@@ -13,7 +13,13 @@
     </properties>
     <modules>
         <module>eureka-server-standalone</module>
-        <module>eureka-demo01-provider</module><module>eureka-demo01-consumer</module>
+        <module>eureka-demo01-provider</module>
+        <module>eureka-demo01-consumer</module>
+
+        <module>eureka-server-cluster</module>
+        <module>eureka-demo02-provider</module>
+        <module>eureka-demo02-consumer</module>
+
     </modules>
     
 </project>
