@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo-consumer # Spring 应用名
+
+server:
+  port: 28080 # 服务器端口。默认为 8080
+
+# 配置 --spring.profiles.active 为 dev，设置 DemoConsumerApplication 读取 application-dev.yaml 配置文件
+# 配置 --spring.profiles.active 为 uat，设置 DemoConsumerApplication 读取 application-uat.yaml 配置文件
