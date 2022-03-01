@@ -12,6 +12,9 @@ server:
   port: 28080 # 服务器端口。默认为 8080
 
 
+
+# http://127.0.0.1:28080/actuator/nacosdiscovery
+
 management:
   endpoints:
     web:
