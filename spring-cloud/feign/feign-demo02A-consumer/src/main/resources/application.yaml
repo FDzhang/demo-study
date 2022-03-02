@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: demo-consumer # Spring 应用名
+  cloud:
+    nacos:
+      # Nacos 作为注册中心的配置项，对应 NacosDiscoveryProperties 配置类
+      discovery:
+        server-addr: 127.0.0.1:8848 # Nacos 服务器地址
+
+server:
+  port: 28080 # 服务器端口。默认为 8080
+
+logging:
+  level:
+    cn.seasun.feignconsumerdemo.feign: DEBUG
+
+# 在 Feign 中，定义了四种日志级别：
+# NONE：不打印日志
+# BASIC：只打印基本信息，包括请求方法、请求地址、响应状态码、请求时长
+# HEADERS：在 BASIC 基础信息的基础之上，增加请求头、响应头
+# FULL：打印完整信息，包括请求和响应的所有信息。
+
+# ① 在 logging.level 配置项下，添加自定义 Feign 接口所在包的日志级别为 DEBUG。Feign 定义的四种日志级别，针对的是日志内容的级别。
+#  最终打印日志时，Feign 是调用日志组件的 DEBUG 级别打印日志，所以这里需要设置为 DEBUG 级别。
+# ② 在 feign.client 配置下，设置 Feign 客户端的配置，对应 FeignClientProperties 配置属性类。其中 config 配置项，
+#  可以设置每个 Feign 客户端的配置，并且 key 为 Feign 客户端的名字，value 为 FeignClientConfiguration 对象。
+# default 为特殊的 key，用于全局级别的配置。
+# logger-level 配置项，设置 Feign 的日志级别。
+#总结来说，这里配置名字为 demo-provider 的 Feign 客户端的日志级别为 FULL，全局级别的 Feign 客户端的日志级别为 BASIC。
+
+# 想要测试 Feign 全局级别的自定义配置的效果，可以注释掉 feign.client.config.demo-provider 配置项。
+feign:
+  # Feign 客户端配置，对应 FeignClientProperties 配置属性类
+  client:
+    # config 配置项是 Map 类型。key 为 Feign 客户端的名字，value 为 FeignClientConfiguration 对象
+    config:
+      # 全局级别配置
+      default:
+        logger-level: BASIC
+      # 客户端级别配置
+      demo-provider:
+        logger-level: FULL
