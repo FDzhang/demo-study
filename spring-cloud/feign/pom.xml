@@ -16,6 +16,7 @@
         <module>feign-demo01-provider</module>
 
         <module>feign-demo02A-consumer</module>
+        <module>feign-demo02B-consumer</module>
     </modules>
 
 
