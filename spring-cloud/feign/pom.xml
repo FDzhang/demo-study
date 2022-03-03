@@ -17,6 +17,10 @@
 
         <module>feign-demo02A-consumer</module>
         <module>feign-demo02B-consumer</module>
+
+        <module>feign-demo03-provider-api</module>
+        <module>feign-demo03-provider</module>
+        <module>feign-demo03-consumer</module>
     </modules>
 
 
