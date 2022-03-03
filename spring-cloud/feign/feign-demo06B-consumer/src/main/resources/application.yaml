@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: demo-consumer # Spring 应用名
+  cloud:
+    nacos:
+      # Nacos 作为注册中心的配置项，对应 NacosDiscoveryProperties 配置类
+      discovery:
+        server-addr: 127.0.0.1:8848 # Nacos 服务器地址
+
+server:
+  port: 28080 # 服务器端口。默认为 8080
+
+
+
+# 通过设置 feign.okhttp.enabled 配置项为 true，我们可以开启 Feign OkHttp。目前暂无其它 feign.okhttp 配置项。
+# 另外，因为 feign.httpclient.enabled 配置项默认为 true，所以需要手动设置成 false，避免使用了 Feign Apache HttpClient。
+feign:
+  httpclient:
+    enabled: false # 是否开启。默认为 true
+  okhttp:
+    enabled: true # 是否开启。默认为 false
