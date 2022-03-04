@@ -34,7 +34,7 @@ public class CodeGenerator {
     private final static String packageParent = "com.example.demomybatisplus.gen";
     private final static String moduleName = "target";
 
-    private final static String[] tableNames = {"target_manage", "time_record"};
+    private final static String[] tableNames = {"bill","role","user"};
 
     static {
         if (!"".equals(moduleName)){
@@ -79,7 +79,7 @@ public class CodeGenerator {
      */
     private static void setDataSourceConfig(AutoGenerator mpg) {
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://ip/target_manage_time_record?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://rm-uf63s2q3204s520365o.mysql.rds.aliyuncs.com:3306/test_a?useUnicode=true&useSSL=false&characterEncoding=utf8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
@@ -96,6 +96,8 @@ public class CodeGenerator {
         gc.setOutputDir(outputDir);
         gc.setAuthor(author);
 
+        // 是否覆盖
+        gc.setFileOverride(true);
         // 是否打开输出目录
         gc.setOpen(false);
         // 实体属性 Swagger2 注解

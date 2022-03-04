@@ -1,9 +1,17 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=UTF-8
-    username: root
-    password: root
+    dynamic:
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://rm-uf63s2q3204s520365o.mysql.rds.aliyuncs.com:3306/test_a?useUnicode=true&characterEncoding=UTF-8
+          username: root
+          password: zT1lg1t#
+        sqlserver:
+          username: sa
+          password: mysql
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          url: jdbc:sqlserver://192.168.0.215:1433;DatabaseName=page_helper_test;useUnicode=true;characterEncoding=UTF-8
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
