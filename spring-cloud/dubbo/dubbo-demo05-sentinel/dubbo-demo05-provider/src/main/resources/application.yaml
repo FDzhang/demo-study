@@ -6,9 +6,11 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848 # Nacos 服务器地址
-
-server:
-  port: 18080 # 服务器端口，默认为 8080
+    # Sentinel 配置项
+    sentinel:
+      eager: true # 是否饥饿加载。默认为 false 关闭
+      transport:
+        dashboard: 127.0.0.1:7070 # Sentinel 控制台地址
 
 # Dubbo 配置项，对应 DubboConfigurationProperties 类
 dubbo:
@@ -25,15 +27,3 @@ dubbo:
   # Spring Cloud Alibaba Dubbo 专属配置项，对应 DubboCloudProperties 类
   cloud:
     subscribed-services: '' # 设置订阅的应用列表，默认为 * 订阅所有应用。
-
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*' # 需要开放的端点。默认值只打开 health 和 info 两个端点。通过设置 * ，可以开放所有端点。
-  endpoint:
-    # Health 端点配置项，对应 HealthProperties 配置类
-    health:
-      enabled: true # 是否开启。默认为 true 开启。
-      show-details: ALWAYS # 何时显示完整的健康信息。默认为 NEVER 都不展示。可选 WHEN_AUTHORIZED 当经过授权的用户；可选 ALWAYS 总是展示。

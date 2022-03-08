@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: demo-consumer
+  cloud:
+    # Nacos 作为注册中心的配置项
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    # Sentinel 配置项
+    sentinel:
+      eager: true # 是否饥饿加载。默认为 false 关闭
+      transport:
+        dashboard: 127.0.0.1:7070 # Sentinel 控制台地址
+# Dubbo 配置项，对应 DubboConfigurationProperties 类
+dubbo:
+  # Dubbo 服务注册中心配置，对应 RegistryConfig 类
+  registry:
+    address: spring-cloud://127.0.0.1:8848 # 指定 Dubbo 服务注册中心的地址
+  # Spring Cloud Alibaba Dubbo 专属配置项，对应 DubboCloudProperties 类
+  protocol:
+    name: dubbo
+    port: -1
+  cloud:
+    subscribed-services: demo-provider # 设置订阅的应用列表，默认为 * 订阅所有应用。
+
+# 总体和「2.2.2 配置文件」差不多，我们仅来说说差异的地方。
+# ① 去掉 dubbo.scan、dubbo.protocols 配置项，因为没有需要扫描的服务实现类，并进行服务暴露。
+# ② 设置 dubbo.cloud.subscribed-services 配置项为 demo-provider，订阅「2.2 搭建服务提供者」的实例列表。
+

@@ -2,10 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent><artifactId>dubbo-demo02</artifactId><groupId>cn.seasun</groupId><version>1.0-SNAPSHOT</version></parent>
+    <parent><artifactId>dubbo-demo05-sentinel</artifactId><groupId>cn.seasun</groupId><version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-demo02-provider-springmvc</artifactId><version>1.0-SNAPSHOT</version>
+    <artifactId>dubbo-demo05-consumer</artifactId>
 
     <properties>
         <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
@@ -47,14 +48,8 @@
         <!-- 引入定义的 Dubbo API 接口 -->
         <dependency>
             <groupId>cn.seasun</groupId>
-            <artifactId>dubbo-demo02-api</artifactId>
+            <artifactId>dubbo-demo05-api</artifactId>
             <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- 引入 SpringMVC 相关依赖，并实现对其的自动配置 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
@@ -63,6 +58,11 @@
             <version>1.0.11</version>
         </dependency>
 
+        <!-- 引入 SpringMVC 相关依赖，并实现对其的自动配置 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <!-- 引入 Spring Cloud Alibaba Nacos Discovery 相关依赖，将 Nacos 作为注册中心，并实现对其的自动配置 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -75,19 +75,14 @@
             <artifactId>spring-cloud-starter-dubbo</artifactId>
         </dependency>
 
-        <!-- 实现对 Actuator 的自动化配置 -->
+        <!-- 引入 Spring Cloud Alibaba Sentinel 相关依赖，使用 Sentinel 提供服务保障，并实现对其的自动配置 -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
-
-        <!-- 引入 Dubbo 拓展的 Actuator  自动化配置 -->
-        <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-spring-boot-actuator -->
         <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-spring-boot-actuator</artifactId>
-            <version>2.7.15</version>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-apache-dubbo-adapter</artifactId>
         </dependency>
-
     </dependencies>
 </project>

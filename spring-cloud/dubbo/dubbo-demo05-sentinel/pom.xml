@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent><artifactId>dubbo</artifactId><groupId>cn.seasun</groupId><version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <artifactId>dubbo-demo05-sentinel</artifactId>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+    <!--    本小节我们来进行 Dubbo 和 Sentinel 的整合，使用 Sentinel 进行 Dubbo 的流量保护。
+    Sentinel 提供了 sentinel-apache-dubbo-adapter 子项目，已经对 Dubbo 进行适配，
+    所以我们只要引入它，基本就完成了 Dubbo 和 Sentinel 的整合，贼方便。
+
+    Sentinel 是阿里中间件团队开源的，面向分布式服务架构的轻量级流量控制产品，
+    主要以流量为切入点，从流量控制、熔断降级、系统负载保护等多个维度来帮助用户保护服务的稳定性。
+    -->
+    <modules>
+        <module>dubbo-demo05-api</module>
+        <module>dubbo-demo05-provider</module>
+        <module>dubbo-demo05-consumer</module>
+    </modules>
+    
+</project>
