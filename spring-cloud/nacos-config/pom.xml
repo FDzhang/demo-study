@@ -14,6 +14,10 @@
     <modules>
         <module>nacos-config-demo</module>
         <module>nacos-config-demo-profiles</module>
+        <module>nacos-config-auto-refresh</module>
+        <module>config-demo-jasypt</module>
+        <module>nacos-config-demo-actuator</module>
+        <module>config-demo-multi</module>
     </modules>
 
 
