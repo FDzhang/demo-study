@@ -9,7 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>nacos-config-demo</artifactId>
+    <artifactId>config-demo-jasypt</artifactId>
+
     <properties>
         <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
         <spring.cloud.version>Hoxton.SR12</spring.cloud.version>
@@ -66,6 +67,20 @@
             <version>1.2.79</version>
         </dependency>
 
-    </dependencies>
+        <!-- 实现对 Jasypt 实现自动化配置 -->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>3.0.2</version>
+            <!--            <scope>test</scope>-->
+        </dependency>
 
+        <!-- 方便等会写单元测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
 </project>

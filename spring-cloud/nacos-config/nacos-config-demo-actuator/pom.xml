@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>nacos-config-demo</artifactId>
+    <artifactId>nacos-config-demo-actuator</artifactId>
     <properties>
         <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
         <spring.cloud.version>Hoxton.SR12</spring.cloud.version>
@@ -64,6 +64,12 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.79</version>
+        </dependency>
+
+        <!-- 实现对 Actuator 的自动化配置 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
     </dependencies>
