@@ -11,6 +11,7 @@
     <modules>
         <module>springsecurity-demo</module>
         <module>springsecurity-demo-role</module>
+        <module>demo02-authorization-server-with-resource-owner-password-credentials</module>
     </modules>
 
     <properties>
