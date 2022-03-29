@@ -13,6 +13,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>gateway-demo01</module>
+        <module>gateway-demo02-registry</module>
+        <module>user-service</module>
     </modules>
 
     <properties>
