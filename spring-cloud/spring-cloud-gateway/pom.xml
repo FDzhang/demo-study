@@ -18,6 +18,7 @@
         <module>gateway-demo03-config-nacos</module>
         <module>gateway-demo04</module>
         <module>gateway-demo05-custom-gateway-filter</module>
+        <module>gateway-demo06-rate-limiter</module>
     </modules>
 
     <properties>
