@@ -15,6 +15,7 @@
         <module>gateway-demo01</module>
         <module>gateway-demo02-registry</module>
         <module>user-service</module>
+        <module>gateway-demo03-config-nacos</module>
     </modules>
 
     <properties>
