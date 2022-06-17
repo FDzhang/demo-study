@@ -63,7 +63,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.79</version>
+            <version>1.2.83</version>
         </dependency>
 
         <!-- 实现对 Actuator 的自动化配置 -->
