@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: dev
+
+
+elasticjob:
+  tracing:
+    type: RDB
+  regCenter:
+    serverLists: localhost:2181
+    namespace: elasticjob-lite-springboot
+  jobs:
+    simpleJob:
+      elasticJobClass: com.example.demoelasticjob.job.MyJob
+      cron: 0/5 * * * * ?
+      shardingTotalCount: 3
+      shardingItemParameters: 0=Beijing,1=Shanghai,2=Guangzhou
+  dump:
+    port: 9888
+
+server:
+  port: 18211

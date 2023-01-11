@@ -6,6 +6,8 @@ import org.springframework.scheduling.annotation.SchedulingConfigurer;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 
+import java.util.*;
+
 @Configuration
 public class SchedulerConfig implements SchedulingConfigurer {
 
@@ -19,6 +21,9 @@ public class SchedulerConfig implements SchedulingConfigurer {
         scheduler.setPoolSize(POOL_SIZE);
         scheduler.setThreadNamePrefix("My-Scheduler-");
         scheduler.initialize();
+
+        List<String> string = new ArrayList<>();
+        Map<String,String> map = new LinkedHashMap<>();
 
         taskRegistrar.setTaskScheduler(scheduler);
     }

@@ -2,12 +2,13 @@ package com.example.demoelasticjob.job;
 
 import org.apache.shardingsphere.elasticjob.api.ShardingContext;
 import org.apache.shardingsphere.elasticjob.simple.job.SimpleJob;
+import org.springframework.stereotype.Component;
 
 /**
  * @author ：zxq
  * @date ：Created in 2021/4/2 16:35
  */
-
+@Component
 public class MyJob implements SimpleJob {
 
     @Override
