@@ -1,4 +1,4 @@
-package org.example;
+package cn.fd.other;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
@@ -16,6 +16,8 @@ public class TextEditorDemo extends JFrame {
         RSyntaxTextArea textArea = new RSyntaxTextArea(20, 60);
         textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
         textArea.setCodeFoldingEnabled(true);
+        textArea.setFont(new Font("consolas", Font.PLAIN, 20));
+
         RTextScrollPane sp = new RTextScrollPane(textArea);
         cp.add(sp);
 

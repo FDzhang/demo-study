@@ -1,4 +1,4 @@
-package org.example;
+package cn.fd.other;
 
 import javafx.application.Application;
 import javafx.embed.swing.SwingNode;
@@ -30,6 +30,7 @@ public class FxDemo1  extends Application {
         RSyntaxTextArea textArea = new RSyntaxTextArea(20, 60);
         textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
         textArea.setCodeFoldingEnabled(true);
+        textArea.setFont(new Font("consolas", Font.PLAIN, 20));
 
         textArea.setText("    public TextEditorDemo() {\n" +
                 "\n" +
