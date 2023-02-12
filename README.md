@@ -36,7 +36,13 @@
 
 学习链接： [javafx中文视频教程](https://space.bilibili.com/5096022/channel/collectiondetail?sid=210809)
 
+https://fxdocs.github.io/docs/html5/
 
+https://jenkov.com/tutorials/javafx/index.html
+
+https://github.com/fvarrui/JavaPackager
+
+https://github.com/palexdev/MaterialFX
 
 
 
