@@ -10,5 +10,6 @@ module swing.javafx {
 
     opens cn.fd to javafx.web,javafx.media,javafx.swing,javafx.controls,javafx.fxml,javafx.base,javafx.graphics;
     opens cn.fd.javafx to javafx.base, javafx.controls, javafx.fxml, javafx.graphics, javafx.media, javafx.swing, javafx.web;
+    opens cn.fd.javafx1 to javafx.base, javafx.controls, javafx.fxml, javafx.graphics, javafx.media, javafx.swing, javafx.web;
 
 }
