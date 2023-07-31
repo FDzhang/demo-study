@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import cn.fd.javafx1.Person?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<AnchorPane xmlns:fx="http://www.w3.org/2001/XMLSchema">
+    <fx:define>
+        <ToggleGroup fx:id="group"></ToggleGroup>
+        <Insets fx:id="margin" top="10" bottom="10" left="10" right="10"></Insets>
+        <Button fx:id="bu" text="Button"></Button>
+    </fx:define>
+    <HBox prefWidth="500" prefHeight="600" spacing="4" alignment="CENTER">
+<!--        <alignment><Pos fx:constant="CENTER"></Pos></alignment>-->
+        <RadioButton text="A" toggleGroup="$group"></RadioButton>
+        <RadioButton text="B" toggleGroup="$group"></RadioButton>
+        <RadioButton text="C" toggleGroup="$group"></RadioButton>
+        <RadioButton text="D" toggleGroup="$group"></RadioButton>
+
+        <Button text="Hello" HBox.margin="$margin"></Button>
+        <Button text="Hello1" HBox.margin="$margin"></Button>
+
+        <fx:reference source="bu"></fx:reference>
+        <fx:include source="Demo116_1.fxml"></fx:include>
+    </HBox>
+    <Button AnchorPane.topAnchor="500" fx:id="b1" text="Hello" prefWidth="200"></Button>
+    <Button AnchorPane.topAnchor="550" text="Hello1" prefWidth="${b1}"></Button>
+
+</AnchorPane>
