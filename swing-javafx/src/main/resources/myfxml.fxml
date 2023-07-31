@@ -2,11 +2,52 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.Button?>
-<AnchorPane xmlns:fx="http://www.w3.org/2001/XMLSchema">
-    <children>
-        <Button id="b1" text="hello world" prefHeight="100" prefWidth="100">
-            <AnchorPane.leftAnchor>100</AnchorPane.leftAnchor>
-            <AnchorPane.topAnchor>100</AnchorPane.topAnchor>
-        </Button>
-    </children>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ComboBox?>
+<AnchorPane fx:controller="cn.fd.javafx1.MyController113" xmlns:fx="http://www.w3.org/2001/XMLSchema">
+    <Label fx:id="l1" text="this is label"/>
+    <Button fx:id="b1" text="hello world" prefHeight="100" prefWidth="100" onAction="#action">
+        <AnchorPane.leftAnchor>100</AnchorPane.leftAnchor>
+        <AnchorPane.topAnchor>100</AnchorPane.topAnchor>
+    </Button>
+
+    <ImageView AnchorPane.topAnchor="300" AnchorPane.leftAnchor="100" fitWidth="100" preserveRatio="true">
+        <Image url="icon.png"/>
+    </ImageView>
+
+    <BorderPane style="-fx-background-color: #ffff55" prefWidth="400" prefHeight="200" AnchorPane.topAnchor="200" AnchorPane.leftAnchor="300">
+        <left>
+            <ListView fx:id="listView" prefHeight="200" prefWidth="200">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="data1"/>
+                        <String fx:value="data2"/>
+                        <String fx:value="data3"/>
+                        <String fx:value="data4"/>
+                        <String fx:value="data5"/>
+                    </FXCollections>
+                </items>
+            </ListView>
+        </left>
+        <right>
+            <ComboBox >
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="data1"/>
+                        <String fx:value="data2"/>
+                        <String fx:value="data3"/>
+                        <String fx:value="data4"/>
+                        <String fx:value="data5"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </right>
+    </BorderPane>
+
 </AnchorPane>

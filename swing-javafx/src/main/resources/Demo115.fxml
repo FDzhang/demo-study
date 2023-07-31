@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import cn.fd.javafx1.Person?>
+
+<!--<ArrayList>-->
+<!--    <Person name="A" age="10" address="xxx"/>-->
+<!--    <Person name="B" age="20"/>-->
+<!--    <Person name="C" age="30"/>-->
+<!--</ArrayList>-->
+<HashMap a="1" b="2" c="3">
+
+</HashMap>
