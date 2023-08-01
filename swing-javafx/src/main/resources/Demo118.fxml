@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.control.TextField?>
+<AnchorPane fx:controller="cn.fd.javafx1.DemoController118" prefHeight="600.0" prefWidth="422.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <HBox spacing="20">
+        <Button text="%value"></Button>
+        <TextField text="%value2"></TextField>
+    </HBox>
+</AnchorPane>
